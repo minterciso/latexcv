@@ -1,0 +1,190 @@
+\documentclass[10pt,a4paper]{article}
+
+% NOTE: this only compiles with XeLaTeX (due to the fonts), because of the fonts.
+% Also, because a package really wants a4paper apposed to letterpaper, we have to set a flag
+% to keep compiling through warnings. ¯\_(ツ)_/¯
+%
+% So, to compiles this document, use the following shell command:
+%
+% xelatex -interaction=nonstopmode illya-starikov-resume.tex
+%
+% NOTE: This requires some fonts to compile properly, specially FontIn. They are available online.
+% Place the fonts files (OTF)s at the same level as this document.
+
+\usepackage{xunicode,xltxtra,url,parskip,enumitem,marvosym,graphicx,titlesec,hyperref,fontawesome,setspace,siunitx,multicol,textcomp}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo}
+\usepackage[absolute]{textpos}
+
+\usepackage{fontspec} % For loading fonts
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[
+    SmallCapsFont = Fontin-SmallCaps.otf, BoldFont = Fontin-Bold.otf,
+    ItalicFont = Fontin-Italic.otf
+]{Fontin.otf}
+\defaultfontfeatures{Mapping=tex-text}
+
+% Link color should be mostly black, with a border around it
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks=false,allbordercolors={0 0 0},pdfborderstyle={/S/U/W 1}}
+
+% Just a useful utility for splitting up columns
+\newcommand{\br}{\\\multicolumn{2}{c}{}}
+
+% Set the margins to 5inches a piece
+\newgeometry{noheadfoot=true,top=.5in,bottom=.5in, left=.5in, right=.5in}
+
+% Make titles fit the page better
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+% Make bullet point pretty
+\setlist[itemize]{label=$\circ$, leftmargin=12pt, noitemsep, before={\vspace*{-.5\baselineskip}}, after={\vspace*{-\baselineskip}}}
+
+% Don't hyphenate anything
+\tolerance=1
+\emergencystretch=\maxdimen%
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Absolute text positioning
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+
+% Don't hyphenate anything, make the text start closer to the ceiling
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\pagestyle{empty}
+
+\par{\centering
+    {\Huge \textsc{Mateus Interciso}
+}\bigskip\par}
+
+\vspace{-.5em}
+
+\begin{multicols}{2}
+\begin{tabular}{rl}
+    \textsc{Email \faEnvelope} & \href{mailto:minterciso@gmail.com}{minterciso@gmail.com} \\
+    \textsc{Phone \faPhone}        & +55 (11) 98228 -- 2573 \\
+    \textsc{LinkedIn \faLinkedin}  & \href{https://www.linkedin.com/in/mateusinterciso/}{linkedin.com/in/mateusinterciso} \\
+    \textsc{Github \faGithub}      & \href{https://github.com/minterciso}{github.com/minterciso} \\
+    \textsc{Portfolio \faGlobe}   & \href{http://portfolio.geekvault.org}{geekvault.org} \\
+\end{tabular}
+
+    Passionate Computer Scientist with an extensive background in R\&D, specifically in the field of Artificial Intelligence and optimization problems. Not afraid of making mistakes and learning with them.
+
+\end{multicols}
+
+\vspace{-.5em}
+
+\section{Work Experience}
+\begin{tabular}{r|p{16cm}}
+    \textsc{Current}  & \textbf{RPA Senior Specialist Consultant}  \\
+    Apr 2017         & \textit{Deloitte Thouche Tomatsu}\\ &
+    \begin{itemize}
+        \item Technical leader of the RPA practice, solving clients problems that range from standard RPA to complete RCA systems.
+        \item Responsible for QA of some RPA/RCA projects.
+        \item \textbf{Current Projects} : Currently engaged on two distinct projects:
+        \begin{enumerate}
+        	\item Complete SaaS interface to a custom Artificial Intelligence algorithm to solve optimization problems (Python, C++, CUDA, Django, Flask, Docker and Kubernetes)
+        	\item Complete SaaS interface to present business oriented results of RPAs, Machine Learning predictions based on those results, and control the bots (Python, Django, Flask, Docker and Kubernetes)
+        \end{enumerate}
+        \item \textbf{Portfolio Project} : Lead developer and architect of a 2 year RCA project for one of the biggest Logistic companies. This project involved standard RPA with Automation Anywhere, custom built Python daemon to support the RPA, Machine Learning to support the RPA decisions, and web interface to support the client information.
+        \item \textbf{DevOPS technical leadership} : Successful coordination of a DevOPS team to accelerate and guarantee the delivery of a project considered "trouble project".
+    \end{itemize} \br\\
+
+    \textsc{Apr 2017} & \textbf{Oracle DBA/ATG} \\
+    Mar 2013           & \textit{Deloitte Thouche Tomatsu}\\ &
+    \begin{itemize}
+        \item Technical leader of the Oracle DBA/ATG for the BPS and Delivery Center practice.
+        \item Infrastructure specialist (both on premises and AWS IaaS).
+        \item \textbf{Portfolio Project} : Lead developer for automating an Oracle EBS migration from on premisses DC to AWS.
+    \end{itemize} \br\\
+
+    \textsc{Mar 2013} & \textbf{Network Administrator/DBA} \\
+    Oct 2009          & \textit{Método Engenharia} \\ &
+    \begin{itemize}
+    	\item Acted as DBA/ATG for the Oracle EBS 11 of the company.
+        \item Responsible for all Linux servers, dealing with Asterisk, Centreon, Nagios, IM, backup server and others.
+        \item \textbf{Portfolio Project} : Complete implementation of monitoring via Nagios and Centreon for all servers in the company, with real-time alerts both via e-mail, SMS and Telegram.
+    \end{itemize} \br\\
+
+    \textsc{Oct 2009} & \textbf{Network Administrator/Programmer}  \\
+    Apr 2007          & \textit{Ouvi Divulgação e Marketing} \\ &
+    \begin{itemize}
+        \item Created and organized the network of the start up company.
+        \item Programmed in JME, C++ and Ogre to build concepts of totem games controlled via mobile.
+        \item \textbf{Porfolio Project} : Created a small multiplayer racing game from scratch in Ogre and C++, that was controlled via mobile phones on a custom JME application, via Bluetooth. This was made for a POC of Digital Marketing.
+    \end{itemize}
+\end{tabular}
+
+\section{Technical Skills}
+\begin{tabular}{r|p{16cm}}
+    \textsc{\small Technologies I use every day} &
+    Python, 
+    C/C++, 
+    Cuda,
+    \LaTeX{}, 
+    \textsc{Bash},
+    Django, 
+    Flask, 
+    Docker, \\
+    & Kubernetes, 
+    Google Cloud Apps, 
+    Git, 
+    PostgreSQL, 
+    Linux \br\\
+
+    \textsc{\small Technologies I'm confortable with} &
+    AWS (EC2, Elastic Beanstalk, Route53, RDS), 
+    Oracle Database, 
+    Ansible, \\
+    & Nginx, 
+    Docker Swarm\br\\
+
+    \textsc{\small Technologies I know but haven't used for a while} &
+    Automation Anywhere,
+        Java, 
+        iptables, 
+        ipfw, 
+        ufw, 
+        Assembly, 
+        Squid, \\
+        & Apache, 
+        Solaris, 
+        Free/Open/NetBSD
+\end{tabular}
+
+\section{Education}
+\begin{tabular}{r|p{16cm}}
+	\textsc{Current} 2021 & \textbf{PHD} \\
+						& \textbf{USP} \\
+						& Currently pursuing a PHD on Reinforcement Learning for Logistics problems \\
+	\textsc{Aug} 2011 & \textbf{Masters} \\
+	\textsc{Jun} 2009 & \textbf{Universidade Presbiteriana Mackenzie} \\
+					  & Artificial Intelligence and Evolutionary Systems \br\\
+	\textsc{Jun} 2011 & \textbf{Congress} \\
+					  & \textbf{Congress of Evolutionary Computing (CEC) - New Orleans} \\
+					  & Presented the paper “Ternary Representation Improves The Search For Binary, One-Dimensional Density Classifier Cellular Automata”. \br\\
+    \textsc{Dec} 2008 & \textbf{Bachelor of Computer Science} \\
+    \textsc{Jun} 2002 & \textit{Universidade Presbiteriana Mackenzie}  \\
+                      & TCC: "Utilização do ACO para roteamento de redes"
+\end{tabular}
+
+\section{Teaching Experience}
+\begin{tabular}{r|p{16cm}}
+	\textsc{Dec} 2012 & \textbf{Universidade Sumaré: Computer Science Degree} \\
+	\textsc{Oct} 2011 & Operational Systems, Networks, Introduction to Programming (ANSI C), OOP (Java), Algorithm Analysis, Artificial Intelligence
+
+\end{tabular}
+
+\section{Languages}
+\begin{tabular}{r|p{16cm}}
+	\textsc{Portuguese} & Native \\
+    \textsc{English} & Fluent \\ & TOEIC Score: 940 \\
+    \textsc{Italian} & Fluent \\ & Studied at Eugênio Montale till 5$^{th}$ grade. Italian family. \\
+    \textsc{Spanish} & Intermediate
+\end{tabular}
+\end{document}
